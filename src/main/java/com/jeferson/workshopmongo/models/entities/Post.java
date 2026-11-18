@@ -8,7 +8,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import com.jeferson.workshopmongo.models.embedded.Author;
-import com.jeferson.workshopmongo.models.embedded.Comments;
+import com.jeferson.workshopmongo.models.embedded.Comment;
 
 @Document(collection = "post")
 public class Post {
@@ -21,7 +21,7 @@ public class Post {
 	
 	private Author author;
 	
-	private List<Comments> comments = new ArrayList<>();
+	private List<Comment> comments = new ArrayList<>();
 	
 	public Post() {}
 
@@ -73,7 +73,7 @@ public class Post {
 		this.author = author;
 	}
 
-	public List<Comments> getComments() {
+	public List<Comment> getComments() {
 		return comments;
 	}
 }

@@ -2,15 +2,15 @@ package com.jeferson.workshopmongo.models.embedded;
 
 import java.time.Instant;
 
-public class Comments {
+public class Comment {
 
 	private String title;
 	private Instant moment;
 	private Author author;
 	
-	public Comments() {}
+	public Comment() {}
 
-	public Comments(String title, Instant moment, Author author) {
+	public Comment(String title, Instant moment, Author author) {
 
 		this.title = title;
 		this.moment = moment;

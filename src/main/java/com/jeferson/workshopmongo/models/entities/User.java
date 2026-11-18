@@ -16,7 +16,7 @@ public class User {
 	private String email;
 	
 	@DBRef(lazy = true)// tras o autor sem seus posts, so quando chamar
-	public List<Post> post = new ArrayList<>();
+	public List<Post> posts = new ArrayList<>();
 	
 	public User() {}
 
@@ -49,6 +49,10 @@ public class User {
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+
+	public List<Post> getPosts() {
+		return posts;
 	}
 	
 }
