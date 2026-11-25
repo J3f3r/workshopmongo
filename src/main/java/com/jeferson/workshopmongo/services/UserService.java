@@ -6,6 +6,7 @@ import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Service;
 
+import com.jeferson.workshopmongo.models.dto.PostDTO;
 import com.jeferson.workshopmongo.models.dto.UserDTO;
 import com.jeferson.workshopmongo.models.entities.User;
 import com.jeferson.workshopmongo.repositories.UserRepository;
@@ -47,6 +48,11 @@ public class UserService {
 	public void delete(String id) {
 		getEntityById(id);
 		userRepository.deleteById(id);
+	}
+	
+	public List<PostDTO> getUserPosts(String id){
+		User user = getEntityById(id);
+		return user.getPosts().stream().map(x -> new PostDTO(x)).collect(Collectors.toList());
 	}
 
 	private void copyDtoToEntity(UserDTO dto, User entity) {
